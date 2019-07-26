@@ -56,6 +56,7 @@ function updateFragment(fragment, post) {
   fragment.post_title = post.title;
   fragment.feature_image = post.feature_image;
   fragment.post_published_at = post.published_at;
+  fragment.excerpt = post.excerpt;
 
   if (post.primary_author) {
     fragment.author_id = post.primary_author.id;
