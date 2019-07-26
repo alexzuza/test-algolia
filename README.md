@@ -67,31 +67,7 @@ Ignore any warnings about the attributes not being found in a sample of your rec
 
 Finally, add `importance` as a custom ranking attribute in the ranking tab under the "Ranking Formula & Custom Ranking" section. This will allow the tie-break algorithm to give preference to higher fragments in the document structure. In other words, h1 tags will rank higher than h2 tags if they otherwise have the same textual score.
 
-3. [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/mlbrgl/ghost-algolia)
+3. [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/alexzuza/test-algolia)
 4. On Ghost's admin panel, create a new custom integration and the following webhook:
 - Name: Post published, Event: Post published, target URL: the endpoint of the post-published function, found on Netlify's admin panel (https://YOUR-SITE-ID.netlify.com/.netlify/functions/post-published)
 
-# Usage
-
-## Real-time indexing
-
-Triggering indexing is transparent once the app is installed and happens on the following ghost panel operations:
-- publishing a new post (add a new record)
-
-**Cost**: as many operations as fragments in the current post
-
-# Compatibility
-
-Check the last release (on the [releases](https://github.com/mlbrgl/ghost-algolia/releases) page) to see what Ghost version is currently supported.
-
-# Roadmap
-
-- event: updating a published post (update an existing record)
-- event: unpublishing a post (remove a record)
-- event: deleting a post (remove a record)
-- bulk indexing
-
-# Alternative
-
-For a similar process using Zapier: https://discourse.algolia.com/t/how-to-install-algolia-for-ghost-blogging-platform/1201/8. 
-Please check the limitations, as this might not be suitable for your use case.*
