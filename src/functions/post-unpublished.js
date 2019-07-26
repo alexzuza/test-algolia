@@ -9,7 +9,14 @@ exports.handler = (event, context, callback) => {
     index: process.env.ALGOLIA_INDEX,
   };
 
-  const post = JSON.parse(event.body).post.previous;
+  const parsedPost = JSON.parse(event.body).post;
+  // unpublishing
+  let post = parsedPost.current;
+  if (!post.uuid) {
+    // deleting
+    post = parsedPost.previous;
+  }
+
   const index = indexFactory(algoliaSettings);
 
   if(index.connect()) {
